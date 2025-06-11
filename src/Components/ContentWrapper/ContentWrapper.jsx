@@ -1,7 +1,7 @@
-export const ContentWrapper = ({ children }) => {
+export const ContentWrapper = ({children}) => {
     return (
         <>
-            {children}
+        {children}
         </>
     )
 }

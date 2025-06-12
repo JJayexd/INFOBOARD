@@ -54,7 +54,7 @@ export const Activities = ({ title = "Skema", children }) => {
                             <ul>
                                 {activities.slice(0, 8).map((item) => (
                                 <li key={item.Id} className="mb-1">
-                                    <p><i className="fa-solid fa-angle-down mr-1"></i><i className="fa-solid fa-folder text-blue-500 mr-1"></i>{item.Room}</p>
+                                    <p className=""><i className="fa-solid fa-angle-down mr-1"></i><i className="fa-solid fa-folder text-blue-500 mr-1"></i>{item.Room}</p>
                                     <p className="">{new Date(item.StartDate).toLocaleString()}</p>
                                     <p className="font-medium">{item.Subject}</p>
                                 </li>

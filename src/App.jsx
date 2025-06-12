@@ -3,6 +3,7 @@ import { Header } from './Components/Header/Header'
 import { Container } from './Components/Container/Container'
 import { TestBus } from './Components/TestBus/TestBus'
 import { TestMeals } from './Components/TestMeals/TestMeals'
+import { Activities } from './Components/Activities/Activities'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
       <Container>
         <TestMeals />
         <TestBus />
+        <Activities />
       </Container>
     </>
   )

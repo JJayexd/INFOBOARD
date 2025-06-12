@@ -49,7 +49,7 @@ export const TestMeals = ({ title = "Kantinen", children }) => {
       
           <div className="p-6 bg-white">
             {children || (
-              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+              <ul className="grid grid-cols-1 grid-rows-5 gap-4">
                 {meals.map((meal, index) => {
                   const isToday =
                     meal.DayName.toLowerCase() ===
@@ -60,13 +60,13 @@ export const TestMeals = ({ title = "Kantinen", children }) => {
                   return (
                     <li
                       key={index}
-                      className={`flex flex-col justify-between min-h-[160px] p-4 rounded-xl border shadow-sm text-sm transition-all ${
+                      className={`flex flex-col justify-between w-100px p-4 rounded-xl border shadow-sm text-sm transition-all ${
                         isToday
                           ? "border-blue-500 bg-blue-50 text-blue-800"
                           : "border-gray-200 bg-white text-gray-800"
                       }`}
                     >
-                      <p className="uppercase font-bold text-[10px] tracking-wide">
+                      <p className="uppercase font-bold text-[16px]">
                         {meal.DayName}
                       </p>
                       <p className="leading-snug">

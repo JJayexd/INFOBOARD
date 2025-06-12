@@ -33,7 +33,7 @@ export const TestBus = ({ title = "Buser", children }) => {
       if (error) return <p>{error}</p>;
 
   return (
-    <div className="mt-4 rounded-2xl shadow-lg border border-gray-300 bg-white overflow-hidden">
+    <div className="max-h-400px mt-4 rounded-2xl shadow-lg border border-gray-300 bg-white overflow-hidden ">
       {/* Top Bar */}
       <div className="flex items-center px-4 py-2 bg-gray-100 border-b border-gray-300">
         <div className="flex space-x-2">
@@ -48,7 +48,7 @@ export const TestBus = ({ title = "Buser", children }) => {
       </div>
 
       {/* Window Content */}
-      <div className="p-6 bg-white">
+      <div className="p-4 bg-white">
         {children || (
           <>
             <ul className="space-y-2">

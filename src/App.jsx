@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { Header } from './Components/Header/Header'
 import { Container } from './Components/Container/Container'
-import { Bus } from './Components/Bus/Bus'
-import { Meals } from './Components/Meals/Meals'
-import { News } from './Components/News/News'
+import { TestBus } from './Components/TestBus/TestBus'
+import { TestMeals } from './Components/TestMeals/TestMeals'
 
 function App() {
 
@@ -11,9 +10,8 @@ function App() {
     <>
       <Header />
       <Container>
-        <Meals />
-        <News />
-        <Bus />
+        <TestMeals />
+        <TestBus />
       </Container>
     </>
   )

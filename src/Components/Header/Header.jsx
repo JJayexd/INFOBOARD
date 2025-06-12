@@ -13,7 +13,7 @@ export const Header = () => {
     });
 
     return (
-        <header className="text-black text-center py-4 bg-cover bg-center bg-grey/30 backdrop-invert backdrop-opacity-10 border rounded-lg mt-1">
+        <header className="text-black text-center py-4 rounded-lg mt-1">
             <h1 className="text-3xl md:text-5xl font-light">
                 <span className="font-extrabold">TECH</span>COLLEGE
             </h1>

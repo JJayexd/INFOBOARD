@@ -33,7 +33,7 @@ export const Meals = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="bg-grey/30 backdrop-invert backdrop-opacity-10 border rounded-lg my-1 w-300px">
+    <div className="bg-white/30 backdrop-invert backdrop-opacity-10 border rounded-lg my-1 w-300px">
       <h2 className="text-xl font-bold uppercase m-1">Kantinen</h2>
         <ul>
           {meals.map((meal, index) => (

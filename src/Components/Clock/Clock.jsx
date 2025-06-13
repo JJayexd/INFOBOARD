@@ -4,7 +4,6 @@ export const Clock = () => {
   const [time, setTime] = useState(new Date());
   const [weather, setWeather] = useState(null);
 
-  // Update clock every second
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(new Date());
@@ -18,7 +17,7 @@ export const Clock = () => {
         const res = await fetch(
           'https://api.openweathermap.org/data/2.5/weather?q=Aalborg&appid=4d58d6f0a435bf7c5a52e2030f17682d&units=metric'
         );
-        if (!res.ok) throw new Error('Failed to fetch weather');
+        if (!res.ok) throw new Error('Fejl');
         const data = await res.json();
         setWeather({
           temp: data.main.temp,
@@ -48,7 +47,7 @@ export const Clock = () => {
           <p>{weather.temp}°C</p>
         </div>
       ) : (
-        <div className="mt-4 text-xl text-gray-500">Loading weather...</div>
+        <div className="mt-4 text-xl text-gray-500">Loading..</div>
       )}
     </div>
   );

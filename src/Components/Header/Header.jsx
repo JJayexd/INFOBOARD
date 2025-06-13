@@ -18,7 +18,7 @@ export const Header = () => {
                 <span className="font-extrabold">TECH</span>COLLEGE
             </h1>
             <p className="text-xs md:text-sm mt-1 tracking-wider font-semibold">
-                {formattedDate} - {formattedTime}
+                {formattedDate}
             </p>
         </header>
     );

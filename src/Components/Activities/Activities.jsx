@@ -54,8 +54,8 @@ export const Activities = ({ title = "Skema", children }) => {
                                 {activities.slice(0, 8).map((item) => (
                                 <li key={item.Id} className="mb-1">
                                     <p className=""><i className="fa-solid fa-angle-down mr-1"></i><i className="fa-solid fa-folder text-blue-500 mr-1"></i>{item.Room} - {item.Team}</p>
-                                    <p className="font-bold">{item.Education} - {item.Subject}</p>
-                                    <p className="">{new Date(item.StartDate).toLocaleString()}</p>
+                                    <p className="font-bold mx-4">{item.Education} - {item.Subject}</p>
+                                    <p className="mx-4">{new Date(item.StartDate).toLocaleString()}</p>
                                 </li>
                                 ))}
                             </ul>

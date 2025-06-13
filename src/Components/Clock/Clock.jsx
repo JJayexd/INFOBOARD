@@ -44,7 +44,7 @@ export const Clock = () => {
       <h1 className="text-6xl">{formatTime(time)}</h1>
       {weather ? (
         <div className="mt-4 text-xl">
-          <p>{weather.temp}°C - {weather.description}</p>
+          <p>{weather.temp}°C</p>
         </div>
       ) : (
         <div className="mt-4 text-xl text-gray-500">Loading weather...</div>

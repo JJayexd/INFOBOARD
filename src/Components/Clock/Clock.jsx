@@ -14,17 +14,17 @@ export const Clock = () => {
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        const res = await fetch(
+        const response = await fetch(
           'https://api.openweathermap.org/data/2.5/weather?q=Aalborg&appid=4d58d6f0a435bf7c5a52e2030f17682d&units=metric'
         );
-        if (!res.ok) throw new Error('Fejl');
-        const data = await res.json();
+        if (!response.ok) throw new Error('Failed to fetch weather');
+        const data = await response.json();
         setWeather({
-          temp: data.main.temp,
+          temp: Math.round(data.main.temp), // rounded temperature
           description: data.weather[0].description,
         });
-      } catch (err) {
-        console.error(err);
+      } catch (error) {
+        console.error('Weather fetch error:', error);
       }
     };
 
@@ -44,10 +44,10 @@ export const Clock = () => {
       <h1 className="text-6xl">{formatTime(time)}</h1>
       {weather ? (
         <div className="mt-4 text-xl">
-          <p>{weather.temp}°C</p>
+          <p>{weather.temp}°C - {weather.description}</p>
         </div>
       ) : (
-        <div className="mt-4 text-xl text-gray-500">Loading..</div>
+        <div className="mt-4 text-xl text-gray-500">Loading weather...</div>
       )}
     </div>
   );

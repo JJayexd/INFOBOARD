@@ -12,13 +12,14 @@ export const TestMeals = ({ title = "Kantinen", children }) => {
         const res = await fetch("https://infoskaerm.techcollege.dk/umbraco/api/content/getcanteenmenu/?type=json");
         const data = await res.json();
 
-        console.log("RESPONS:", data);
+        console.log("Data fra Kantinen:", data);
 
         if (Array.isArray(data?.Days)) {
           setMeals(data.Days);
         } else {
           throw new Error("FORKERT API STRUKTUR?");
         }
+        
       } catch (err) {
         setError(err.message || "Fejl");
       } finally {
@@ -33,7 +34,7 @@ export const TestMeals = ({ title = "Kantinen", children }) => {
   if (error) return <p>{error}</p>;
 
     return (
-        <div className="mt-4 w-full max-w-5xl mx-auto rounded-2xl shadow-lg border border-gray-300 bg-white overflow-hidden">
+        <div className="mt-4 mx-auto rounded-2xl shadow-lg border border-gray-300 bg-white overflow-hidden">
           {/* MacOS Top Bar */}
           <div className="flex items-center px-4 py-2 bg-gray-100 border-b border-gray-300">
             <div className="flex space-x-2">
@@ -47,7 +48,7 @@ export const TestMeals = ({ title = "Kantinen", children }) => {
             <div className="w-8" /> {/* Spacer to center title */}
           </div>
       
-          <div className="p-6 bg-white">
+          <div className="p-4 bg-white">
             {children || (
               <ul className="grid grid-cols-1 grid-rows-5 gap-4">
                 {meals.map((meal, index) => {

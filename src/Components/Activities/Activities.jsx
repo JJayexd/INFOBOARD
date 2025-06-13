@@ -9,15 +9,14 @@ export const Activities = ({ title = "Skema", children }) => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const res = await fetch(
-            "https://iws.itcn.dk/techcollege/schedules?departmentcode=smed"
-          );
+          const res = await fetch("https://iws.itcn.dk/techcollege/schedules?departmentcode=smed");
           if (!res.ok) throw new Error("Fetch failed");
           const data = await res.json();
-          console.log("Data from API:", data);
+
+          console.log("Data fra Skema:", data);
           setActivities(data.value || []);
         } catch (err) {
-          console.error("Fetch error:", err);
+          console.error(err);
           setError(err.message);
         } finally {
           setLoading(false);
@@ -33,7 +32,7 @@ export const Activities = ({ title = "Skema", children }) => {
 
     return (
         <>
-            <div className="max-h-400px mt-4 rounded-2xl shadow-lg border border-gray-300 bg-white overflow-hidden ">
+            <div className="h-700px mt-3 rounded-2xl shadow-lg border border-gray-300 bg-white overflow-hidden ">
                 {/* Top Bar */}
                 <div className="flex items-center px-4 py-2 bg-gray-100 border-b border-gray-300">
                     <div className="flex space-x-2">
@@ -54,9 +53,9 @@ export const Activities = ({ title = "Skema", children }) => {
                             <ul>
                                 {activities.slice(0, 8).map((item) => (
                                 <li key={item.Id} className="mb-1">
-                                    <p className=""><i className="fa-solid fa-angle-down mr-1"></i><i className="fa-solid fa-folder text-blue-500 mr-1"></i>{item.Room}</p>
+                                    <p className=""><i className="fa-solid fa-angle-down mr-1"></i><i className="fa-solid fa-folder text-blue-500 mr-1"></i>{item.Room} - {item.Team}</p>
+                                    <p className="font-bold">{item.Education} - {item.Subject}</p>
                                     <p className="">{new Date(item.StartDate).toLocaleString()}</p>
-                                    <p className="font-medium">{item.Subject}</p>
                                 </li>
                                 ))}
                             </ul>
